@@ -1,0 +1,38 @@
+{
+  "name": "@gcoguiec/eslint-config-base",
+  "version": "1.0.0",
+  "description": "gcoguiec's reusable base ESLint config.",
+  "author": "Guillaume 'Yugo' Coguiec <mail@gcoguiec.com> (https://github.com/gcoguiec/)",
+  "license": "BSD-2-Clause",
+  "main": "index.cjs",
+  "type": "module",
+  "files": [
+    "index.cjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gcoguiec/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gcoguiec/eslint-config/issues"
+  },
+  "homepage": "https://github.com/gcoguiec/eslint-config#readme",
+  "keywords": [
+    "eslint-config"
+  ],
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.4.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-promise": "^6.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0"
+  },
+  "engines": {
+    "node": ">=19",
+    "pnpm": ">=7"
+  }
+}

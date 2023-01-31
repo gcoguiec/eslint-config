@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "language": "en",
+  "ignorePaths": [
+    "**/coverage/**",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/**/CHANGELOG.md",
+    "**/**/LICENSE.md",
+    "**/*.{json,snap}",
+    ".cspell.json"
+  ],
+  "dictionaries": [
+    "typescript",
+    "softwareTerms",
+    "node",
+    "en_US",
+    "npm",
+    "misc",
+    "filetypes"
+  ],
+  "ignoreRegExpList": [
+    "/```[\\w\\W]*?```/",
+    "/~~~[\\w\\W]*?~~~/",
+    "/``[\\w\\W]*?``/",
+    "/`[^`]*`/",
+    "/TS[^\\s]+/",
+    "\\(#.+?\\)"
+  ],
+  "words": ["gcoguiec", "camelcase", "IIFE", "linebreak", "nonwords"],
+  "overrides": [
+    {
+      "filename": "**/*.{ts,js}",
+      "ignoreRegExpList": ["/@[a-z]+/", "/#(end)?region/"],
+      "includeRegExpList": [
+        "/\\/\\*[\\s\\S]*?\\*\\/|([^\\\\:]|^)\\/\\/.*$/",
+        "/(\\/\\/[^\\n\\r]*[\\n\\r]+)/"
+      ]
+    }
+  ]
+}
