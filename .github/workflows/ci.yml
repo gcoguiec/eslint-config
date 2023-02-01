@@ -32,7 +32,7 @@ jobs:
       - name: Spellcheck code-base.
         run: pnpm spellcheck
   unit:
-    name: Run Unit Tests.
+    name: Run unit tests.
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
