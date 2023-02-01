@@ -1,22 +1,21 @@
-<h1 align="center">@gcoguiec/eslint-plugin</h1>
+<h1 align="center">@gcoguiec/eslint-config-typescript</h1>
 <br>
 <p align="center">
   <img src="https://d33wubrfki0l68.cloudfront.net/204482ca413433c80cd14fe369e2181dd97a2a40/092e2/assets/img/logo.svg" width="150" alt="ESLint Logo"/>
 </p>
 <p align="center">
-  A reasonable ESLint base configuration.
+  A rather strict ESLint TypeScript configuration.
 </p>
 <p align="center">
-  <img src="https://img.shields.io/github/package-json/v/gcoguiec/@eslint-config-base?label=npm&style=flat-square" alt="Version"/>
+  <img src="https://img.shields.io/github/package-json/v/gcoguiec/@eslint-config-typescript?label=npm&style=flat-square" alt="Version"/>
   <img src="https://img.shields.io/github/actions/workflow/status/gcoguiec/eslint-config/ci?branch=main&label=ci&style=flat-square" alt="CI Status"/>
 </p>
 
 <hr>
 
-- Single quotes, semicolons
-- Provides reasonable defaults for ECMAScript projects (see [`eslint-config-typescript`](https://github.com/gcoguiec/eslint-config/tree/main/packages/eslint-config-typescript) if you're looking for a [TypeScript](https://www.typescriptlang.org/)-oriented configuration)
-- Only does one thing and one thing only: linting
-- Designed to work well with auto-formatters
+- Single quotes, semicolons.
+- Based on the reasonable [eslint-config-base](https://github.com/gcoguiec/eslint-config/tree/main/packages/eslint-config-base) configuration.
+- Strict by default (and therefore opinionated) rules.
 
 <hr>
 
@@ -31,7 +30,7 @@
 ### Install
 
 ```bash
-pnpm add -D eslint @gcoguiec/eslint-config-base
+pnpm add -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser @gcoguiec/eslint-config-typescript
 ```
 
 ### Register the configuration with [eslint](https://eslint.org/)
@@ -40,7 +39,31 @@ Edit your [`.eslintrc`](https://eslint.org/docs/latest/use/configure/configurati
 
 ```
 {
-  "extends": "@gcoguiec/eslint-config-base"
+  "extends": "@gcoguiec/eslint-config-typescript"
+}
+```
+
+### (Optional) Configure your `tsconfig.json` file
+
+For stricter compilation checks, you can set the following rules in your `tsc` configuration file:
+
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error"
+  }
 }
 ```
 
@@ -55,7 +78,7 @@ Edit your [`.eslintrc`](https://eslint.org/docs/latest/use/configure/configurati
 }
 ```
 
-**Note:** you can replace `pnpm` by your favorite package manager instead.
+**Note:** you can replace `pnpm` with your favorite package manager instead.
 
 ### (Optional) Add the tasks to your `justfile`
 
@@ -69,7 +92,7 @@ lint-fix:
 
 ## See Also
 
-Other [ESLint](https://eslint.org/) configurations based on this package you may want to look at:
+Other [ESLint](https://eslint.org/) configurations you may want to look at:
 
 - [`eslint-config-base`](https://github.com/gcoguiec/eslint-config/tree/main/packages/eslint-config-base)
 - [`eslint-config-vue`](https://github.com/gcoguiec/eslint-config/tree/main/packages/eslint-config-vue)

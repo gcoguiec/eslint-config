@@ -1,4 +1,4 @@
-<h1 align="center">@gcoguiec/eslint-plugin</h1>
+<h1 align="center">@gcoguiec/eslint-config-base</h1>
 <br>
 <p align="center">
   <img src="https://d33wubrfki0l68.cloudfront.net/204482ca413433c80cd14fe369e2181dd97a2a40/092e2/assets/img/logo.svg" width="150" alt="ESLint Logo"/>
@@ -13,10 +13,10 @@
 
 <hr>
 
-- Single quotes, semicolons
-- Provides reasonable defaults for ECMAScript projects (see [`eslint-config-typescript`](https://github.com/gcoguiec/eslint-config/tree/main/packages/eslint-config-typescript) if you're looking for a [TypeScript](https://www.typescriptlang.org/)-oriented configuration)
-- Only does one thing and one thing only: linting
-- Designed to work well with auto-formatters
+- Single quotes, semicolons.
+- Provides reasonable defaults for any ECMAScript projects (see [`eslint-config-typescript`](https://github.com/gcoguiec/eslint-config/tree/main/packages/eslint-config-typescript) if you're looking for a [TypeScript](https://www.typescriptlang.org/)-oriented configuration).
+- Only does one thing and one thing only: linting.
+- It is designed to cooperate well with auto-formatters.
 
 <hr>
 

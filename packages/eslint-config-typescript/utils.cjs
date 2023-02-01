@@ -1,10 +1,10 @@
 const { posix, dirname } = require('path');
 const { existsSync } = require('fs');
 
-function tsconfigPath() {
+function tsconfigPath(filename = 'tsconfig.json') {
   let searchPath = process.cwd();
   while (true) {
-    const configPath = posix.join(searchPath, 'tsconfig.json');
+    const configPath = posix.join(searchPath, filename);
     if (existsSync(configPath)) {
       return configPath;
     }
