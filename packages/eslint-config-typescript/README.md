@@ -8,7 +8,7 @@
 </p>
 <p align="center">
   <img src="https://img.shields.io/github/package-json/v/gcoguiec/@eslint-config-typescript?label=npm&style=flat-square" alt="Version"/>
-  <img src="https://img.shields.io/github/actions/workflow/status/gcoguiec/eslint-config/ci?branch=main&label=ci&style=flat-square" alt="CI Status"/>
+  <img src="https://img.shields.io/github/actions/workflow/status/gcoguiec/eslint-config/ci.yml?branch=main&label=ci&style=flat-square" alt="CI Status"/>
 </p>
 
 <hr>

@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/gcoguiec/eslint-config/issues"
   },
-  "homepage": "https://github.com/gcoguiec/eslint-config#readme",
+  "homepage": "https://github.com/gcoguiec/eslint-config/tree/main/packages/eslint-config-base",
   "keywords": [
     "eslint-config"
   ],

@@ -3,7 +3,7 @@
   A few <a href="https://eslint.org/docs/developer-guide/shareable-configs">reusable</a> ESLint configurations.
 </p>
 <p align="center">
-  <img src="https://img.shields.io/github/actions/workflow/status/gcoguiec/eslint-config/ci?branch=main&label=ci&style=flat-square" alt="CI Status"/>
+  <img src="https://img.shields.io/github/actions/workflow/status/gcoguiec/eslint-config/ci.yml?branch=main&label=ci&style=flat-square" alt="CI Status"/>
 </p>
 
 <hr>
