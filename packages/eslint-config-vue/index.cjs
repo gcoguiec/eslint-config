@@ -1,7 +1,3 @@
-const {
-  tsconfigPath
-} = require('@gcoguiec/eslint-config-typescript/utils.cjs');
-
 const { hasPackage } = require('./utils.cjs');
 
 const rules = {
@@ -95,7 +91,7 @@ module.exports = hasPackage('typescript')
           parser: 'vue-eslint-parser',
           parserOptions: {
             parser: '@typescript-eslint/parser',
-            project: [process.env.ESLINT_TSCONFIG || tsconfigPath()],
+            project: true,
             sourceType: 'module',
             extraFileExtensions: ['.vue']
           },
