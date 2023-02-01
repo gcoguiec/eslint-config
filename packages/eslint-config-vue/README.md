@@ -7,8 +7,12 @@
   A rather strict ESLint TypeScript configuration.
 </p>
 <p align="center">
-  <img src="https://img.shields.io/github/package-json/v/gcoguiec/@eslint-config-typescript?label=npm&style=flat-square" alt="Version"/>
-  <img src="https://img.shields.io/github/actions/workflow/status/gcoguiec/eslint-config/ci.yml?branch=main&label=ci&style=flat-square" alt="CI Status"/>
+  <a href="https://www.npmjs.com/package/@gcoguiec/eslint-config-vue">
+    <img src="https://img.shields.io/github/package-json/v/gcoguiec/eslint-config?filename=packages%2Feslint-config-vue%2Fpackage.json&style=flat-square" alt="Version"/>
+  </a>
+  <a href="https://github.com/gcoguiec/eslint-config/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/gcoguiec/eslint-config/ci.yml?branch=main&label=ci&style=flat-square" alt="CI Status"/>
+  </a>
 </p>
 
 <hr>
