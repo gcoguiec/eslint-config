@@ -6,6 +6,10 @@
   <a href="https://github.com/gcoguiec/eslint-config/actions/workflows/ci.yml">
     <img src="https://img.shields.io/github/actions/workflow/status/gcoguiec/eslint-config/ci.yml?branch=main&label=ci&style=flat-square" alt="CI Status"/>
   </a>
+  <a href="https://github.com/gcoguiec/eslint-config/blob/main/LICENSE.md">
+    <img src="https://img.shields.io/github/license/gcoguiec/eslint-config?style=flat-square&label=License"
+         alt="License"/>
+  </a>
 </p>
 
 <hr>
