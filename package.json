@@ -9,12 +9,13 @@
     "lint": "DEBUG=eslint:cli-engine eslint . --ext .js,.cjs,.mjs",
     "lint:fix": "pnpm lint --fix",
     "lint:conflicts": "npx eslint-config-prettier .eslintrc.cjs",
+    "publish": "pnpm publish -r --access public",
     "spellcheck": "cspell --config=.cspell.json \"**/*.{md,js,cjs,mjs}\"",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "devDependencies": {
     "@gcoguiec/eslint-config-base": "workspace:*",
-    "cspell": "^6.20.0",
+    "cspell": "^6.20.1",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
