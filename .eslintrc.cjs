@@ -4,7 +4,7 @@ module.exports = {
   extends: ['@gcoguiec/eslint-config-base', 'prettier'],
   overrides: [
     {
-      files: ['**/*.spec.mjs'],
+      files: ['**/*.spec.?js'],
       env: {
         jest: true
       },
