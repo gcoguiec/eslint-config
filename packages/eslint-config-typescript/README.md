@@ -34,7 +34,7 @@
 ### Install
 
 ```bash
-pnpm add -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser @gcoguiec/eslint-config-typescript
+pnpm add -D eslint eslint-plugin-import eslint-plugin-promise @typescript-eslint/eslint-plugin @typescript-eslint/parser @gcoguiec/eslint-config-typescript
 ```
 
 ### Register the configuration with [eslint](https://eslint.org/)

@@ -34,7 +34,7 @@
 ### Install
 
 ```bash
-pnpm add -D eslint eslint-plugin-vue @typescript-eslint/eslint-plugin @typescript-eslint/parser @gcoguiec/eslint-config-vue
+pnpm add -D eslint eslint-plugin-import eslint-plugin-promise eslint-plugin-vue @typescript-eslint/eslint-plugin @typescript-eslint/parser @gcoguiec/eslint-config-vue
 ```
 
 ### Register the configuration with [eslint](https://eslint.org/)

@@ -35,7 +35,7 @@
 ### Install
 
 ```bash
-pnpm add -D eslint @gcoguiec/eslint-config-base
+pnpm add -D eslint eslint-plugin-import eslint-plugin-promise @gcoguiec/eslint-config-base
 ```
 
 ### Register the configuration with [eslint](https://eslint.org/)
