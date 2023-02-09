@@ -2,7 +2,6 @@ const { hasPackage } = require('./utils.cjs');
 
 const rules = {
   'vue/multi-word-component-names': 'off',
-  'vue/no-setup-props-destructure': 'off',
   'vue/component-name-in-template-casing': ['error', 'kebab-case'],
   'vue/component-options-name-casing': ['error', 'kebab-case'],
   'vue/component-definition-name-casing': ['error', 'kebab-case'],

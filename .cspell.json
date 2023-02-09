@@ -30,7 +30,7 @@
   "words": ["gcoguiec", "camelcase", "IIFE", "linebreak", "nonwords"],
   "overrides": [
     {
-      "filename": "**/*.{ts,js}",
+      "filename": "**/*.{ts,js,cjs,mjs}",
       "ignoreRegExpList": ["/@[a-z]+/", "/#(end)?region/"],
       "includeRegExpList": [
         "/\\/\\*[\\s\\S]*?\\*\\/|([^\\\\:]|^)\\/\\/.*$/",

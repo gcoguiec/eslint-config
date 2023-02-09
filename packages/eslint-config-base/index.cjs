@@ -100,7 +100,6 @@ module.exports = {
     'no-array-constructor': 'error',
     'no-async-promise-executor': 'error',
     'no-caller': 'error',
-    'no-case-declarations': 'error',
     'no-class-assign': 'error',
     'no-compare-neg-zero': 'error',
     'no-cond-assign': 'error',
