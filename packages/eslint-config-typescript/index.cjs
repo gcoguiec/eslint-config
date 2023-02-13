@@ -1,5 +1,3 @@
-const { tsconfigPath } = require('./utils.cjs');
-
 module.exports = {
   plugins: ['@typescript-eslint'],
   extends: [
@@ -32,7 +30,7 @@ module.exports = {
       files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
       parserOptions: {
         parser: '@typescript-eslint/parser',
-        project: [process.env.ESLINT_TSCONFIG || tsconfigPath()],
+        project: true,
         sourceType: 'module'
       },
       rules: {
