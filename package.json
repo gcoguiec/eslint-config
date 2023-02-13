@@ -11,7 +11,7 @@
     "lint:conflicts": "npx eslint-config-prettier .eslintrc.cjs",
     "publish": "pnpm publish -r --access public",
     "spellcheck": "cspell --config=.cspell.json \"**/*.{md,js,cjs,mjs}\"",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "pnpm -r test"
   },
   "devDependencies": {
     "@gcoguiec/eslint-config-base": "workspace:*",
