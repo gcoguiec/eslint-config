@@ -19,7 +19,7 @@ jobs:
       - name: Setup node.
         uses: actions/setup-node@v3
         with:
-          node-version: 19
+          node-version: 20
           cache: pnpm
       - name: Install dependencies.
         run: pnpm install --frozen-lockfile
@@ -36,7 +36,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [19]
+        node-version: [20]
         os: [ubuntu-latest]
       fail-fast: false
     steps:
