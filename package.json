@@ -2,7 +2,6 @@
   "name": "root",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@7.25.1",
   "scripts": {
     "fmt": "prettier --write \"./**/*.{js,cjs,json,md}\"",
     "fmt:check": "prettier --list-different \"./**/*.{js,cjs,json,md}\"",
@@ -15,14 +14,22 @@
   },
   "devDependencies": {
     "@gcoguiec/eslint-config-base": "workspace:*",
-    "cspell": "^6.20.1",
-    "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jest": "^27.2.1",
+    "cspell": "^7.3.7",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jest": "^27.4.2",
     "eslint-plugin-promise": "^6.1.1",
-    "jest": "^29.4.1",
-    "prettier": "^2.8.3",
-    "typescript": "^4.9.5"
-  }
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "devEngines": {
+    "node": ">=20"
+  },
+  "volta": {
+    "node": "20.7.0",
+    "pnpm": "8.9.0"
+  },
+  "packageManager": "pnpm@8.9.0"
 }
