@@ -1,6 +1,6 @@
 {
   "name": "@gcoguiec/eslint-config-vue",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "gcoguiec's Vue ESLint config.",
   "author": "Guillaume 'Yugo' Coguiec <mail@gcoguiec.com> (https://github.com/gcoguiec/)",
   "license": "BSD-2-Clause",
