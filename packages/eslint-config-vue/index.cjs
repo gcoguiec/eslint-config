@@ -86,11 +86,11 @@ module.exports = hasPackage('typescript')
       rules,
       overrides: [
         {
-          files: ['*.vue'],
+          files: ['**/*.vue'],
           parser: 'vue-eslint-parser',
           parserOptions: {
+            ecmaVersion: 'latest',
             parser: '@typescript-eslint/parser',
-            project: true,
             sourceType: 'module',
             extraFileExtensions: ['.vue']
           },
