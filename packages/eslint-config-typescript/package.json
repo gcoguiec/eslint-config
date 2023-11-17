@@ -1,6 +1,6 @@
 {
   "name": "@gcoguiec/eslint-config-typescript",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "gcoguiec's TypeScript ESLint config.",
   "author": "Guillaume 'Yugo' Coguiec <mail@gcoguiec.com> (https://github.com/gcoguiec/)",
   "license": "BSD-2-Clause",
@@ -40,7 +40,7 @@
     "typescript": "^5.2.2"
   },
   "engines": {
-    "node": ">=20",
+    "node": ">=21",
     "pnpm": ">=8"
   }
 }

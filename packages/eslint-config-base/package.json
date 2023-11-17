@@ -1,6 +1,6 @@
 {
   "name": "@gcoguiec/eslint-config-base",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "gcoguiec's reusable base ESLint config.",
   "author": "Guillaume 'Yugo' Coguiec <mail@gcoguiec.com> (https://github.com/gcoguiec/)",
   "license": "BSD-2-Clause",
@@ -32,7 +32,7 @@
     "eslint": "^8.51.0"
   },
   "engines": {
-    "node": ">=20",
+    "node": ">=21",
     "pnpm": ">=8"
   }
 }

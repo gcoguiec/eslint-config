@@ -9,8 +9,7 @@
     "lint:fix": "pnpm lint --fix",
     "lint:conflicts": "npx eslint-config-prettier .eslintrc.cjs",
     "publish": "pnpm publish -r --access public",
-    "spellcheck": "cspell --config=.cspell.json \"**/*.{md,js,cjs,mjs}\"",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "spellcheck": "cspell --config=.cspell.json \"**/*.{md,js,cjs,mjs}\""
   },
   "devDependencies": {
     "@gcoguiec/eslint-config-base": "workspace:*",
@@ -25,13 +24,13 @@
     "typescript": "^5.2.2"
   },
   "devEngines": {
-    "node": ">=20"
+    "node": ">=21"
   },
   "volta": {
-    "node": "20.7.0",
-    "pnpm": "8.9.0"
+    "node": "21.1.0",
+    "pnpm": "8.10.2"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "pnpm@8.10.2",
   "pnpm": {
     "overrides": {
       "semver@>=6.0.0 <6.3.1": ">=6.3.1",

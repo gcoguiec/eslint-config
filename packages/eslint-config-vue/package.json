@@ -1,6 +1,6 @@
 {
   "name": "@gcoguiec/eslint-config-vue",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "gcoguiec's Vue ESLint config.",
   "author": "Guillaume 'Yugo' Coguiec <mail@gcoguiec.com> (https://github.com/gcoguiec/)",
   "license": "BSD-2-Clause",
@@ -37,7 +37,7 @@
     "eslint-plugin-vue": "^9.17.0"
   },
   "engines": {
-    "node": ">=20",
+    "node": ">=21",
     "pnpm": ">=8"
   }
 }
