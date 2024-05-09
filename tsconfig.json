@@ -1,0 +1,13 @@
+{
+  "extends": "@gcoguiec/tsconfig",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "out",
+    "rootDir": "src",
+    "declaration": true,
+    "declarationDir": "out"
+  },
+  "include": ["src/**/*.ts"]
+}

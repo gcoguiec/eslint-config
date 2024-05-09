@@ -1,41 +1,51 @@
-const { tsconfigPath } = require('./utils.cjs');
+import type { ESLint, Linter } from 'eslint';
 
-module.exports = {
-  plugins: ['@typescript-eslint'],
-  extends: [
-    '@gcoguiec/eslint-config-base',
-    'plugin:import/typescript',
-    'plugin:@typescript-eslint/recommended'
-  ],
-  ignorePatterns: ['*.d.ts', '*.d.cts', '*.d.mts'],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: [
-          '.js',
-          '.cjs',
-          '.mjs',
-          '.jsx',
-          '.ts',
-          '.cts',
-          '.mts',
-          '.tsx',
-          '.d.cts',
-          '.d.mts',
-          '.d.ts'
-        ]
-      }
-    }
-  },
-  overrides: [
+import type { ConfigFactoryOptions } from '../index.js';
+
+import { ecmascript } from './ecmascript.config.js';
+import { importPeer, tsconfigPath } from '../utils.js';
+import { defaultLanguageOptions } from '../index.js';
+
+export const defaultOptions = {
+  files: ['**/*.{ts,d.ts,cts,d.cts,mts,d.mts,tsx}']
+};
+
+export type TypescriptFactoryOptions = ConfigFactoryOptions;
+
+export async function typescript(
+  factoryOptions: TypescriptFactoryOptions = {}
+): Promise<Linter.FlatConfig[]> {
+  const [parentSetup, parentRules] = await ecmascript(factoryOptions);
+  const tsEslint = await importPeer<ESLint.Plugin>(
+    '@typescript-eslint/eslint-plugin'
+  );
+
+  return [
     {
-      files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        project: [process.env.ESLINT_TSCONFIG || tsconfigPath()],
-        sourceType: 'module'
+      name: 'gcoguiec/typescript',
+      files: factoryOptions.files ?? defaultOptions.files,
+      languageOptions: {
+        ...defaultLanguageOptions,
+        parser: await importPeer<Linter.FlatConfigParserModule>(
+          '@typescript-eslint/parser'
+        ),
+        parserOptions: {
+          project: process.env['ESLINT_TSCONFIG'] ?? (await tsconfigPath()),
+          tsconfigRootDir: process.cwd(),
+          sourceType: 'module'
+        }
       },
+      plugins: {
+        ...parentSetup?.plugins,
+        '@typescript-eslint': tsEslint
+      }
+    },
+    {
+      name: 'gcoguiec/typescript/rules',
+      files: factoryOptions.files ?? defaultOptions.files,
       rules: {
+        ...parentRules?.rules,
+        ...(tsEslint.configs?.['recommended'] as Linter.FlatConfig).rules,
         'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': 'error',
         'no-implied-eval': 'off',
@@ -51,16 +61,14 @@ module.exports = {
         'no-dupe-class-members': 'off',
         '@typescript-eslint/no-dupe-class-members': 'error',
         'lines-between-class-members': 'off',
-        '@typescript-eslint/lines-between-class-members': [
-          'error',
-          'always',
-          { exceptAfterSingleLine: true }
-        ],
         '@typescript-eslint/no-floating-promises': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
-        '@typescript-eslint/no-unnecessary-condition': 'error',
+        '@typescript-eslint/no-unnecessary-condition': [
+          'error',
+          { allowConstantLoopConditions: true }
+        ],
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
         '@typescript-eslint/no-use-before-define': [
           'error',
@@ -101,8 +109,9 @@ module.exports = {
         '@typescript-eslint/non-nullable-type-assertion-style': 'error',
         '@typescript-eslint/await-thenable': 'error',
         '@typescript-eslint/unbound-method': 'error',
-        '@typescript-eslint/class-literal-property-style': 'error'
+        '@typescript-eslint/class-literal-property-style': 'error',
+        ...factoryOptions.overrides
       }
     }
-  ]
-};
+  ];
+}

@@ -13,16 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source.
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup pnpm.
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
       - name: Setup node.
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 21
+          node-version: 22
           cache: pnpm
       - name: Install dependencies.
         run: pnpm install --frozen-lockfile
+      - name: Build distribution
+        run: pnpm build
       - name: Execute audit-ci scanner.
         run: npx audit-ci
       - name: Check code format.
@@ -31,25 +33,3 @@ jobs:
         run: pnpm lint
       - name: Spellcheck code-base.
         run: pnpm spellcheck
-  unit:
-    name: Run unit tests.
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [21]
-        os: [ubuntu-latest]
-      fail-fast: false
-    steps:
-      - name: Checkout source.
-        uses: actions/checkout@v3
-      - name: Setup pnpm.
-        uses: pnpm/action-setup@v2
-      - name: Setup node (${{ matrix.node-version }}).
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
-      - name: Install dependencies.
-        run: pnpm install --frozen-lockfile
-      - name: Run Testsuite.
-        run: pnpm -r test
