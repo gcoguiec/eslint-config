@@ -2,10 +2,15 @@
 import { context } from 'esbuild';
 import dts from 'npm-dts';
 
-new dts.Generator({
-  entry: 'src/index.ts',
-  output: 'dist/index.d.ts'
-}).generate();
+new dts.Generator(
+  {
+    tsc: '-p tsconfig.dist.json',
+    entry: 'src/index.ts',
+    output: 'dist/index.d.ts'
+  },
+  false,
+  true
+).generate();
 
 context({
   entryPoints: {
@@ -14,6 +19,7 @@ context({
   bundle: true,
   outdir: './dist',
   external: [
+    'globals',
     'eslint',
     'eslint-plugin-import-x',
     'eslint-plugin-perfectionist',
@@ -24,7 +30,7 @@ context({
   ],
   format: 'esm',
   platform: 'node',
-  tsconfig: './tsconfig.json'
+  tsconfig: './tsconfig.dist.json'
 }).then(async ctx => {
   console.log('building...');
   await ctx.rebuild();

@@ -1,12 +1,12 @@
 import type { ESLint, Linter } from 'eslint';
 
-import { browser } from 'globals';
+import globals from 'globals';
 
 import type { ConfigFactoryOptions } from '../index.js';
 
 import { typescript } from './typescript.config.js';
 import { ecmascript } from './ecmascript.config.js';
-import { importPeer } from '../utils.js';
+import { importPeer, tsconfigPath } from '../utils.js';
 
 export const defaultOptions = {
   files: ['*.vue', '**/*.vue'],
@@ -29,10 +29,9 @@ export interface VueFactoryOptions extends ConfigFactoryOptions {
 export async function vue(
   factoryOptions: VueFactoryOptions = {}
 ): Promise<Linter.FlatConfig[]> {
-  const parentConfig = factoryOptions.typescript
+  const [parentSetup, parentRules] = factoryOptions.typescript
     ? await typescript(factoryOptions)
     : await ecmascript(factoryOptions);
-  const [parentSetup, parentRules] = parentConfig;
   const vueEslint = await importPeer<ESLint.Plugin>('eslint-plugin-vue');
   return [
     {
@@ -40,7 +39,7 @@ export async function vue(
       files: factoryOptions.files ?? defaultOptions.files,
       languageOptions: {
         globals: {
-          ...browser,
+          ...globals.browser,
           computed: 'readonly',
           defineEmits: 'readonly',
           defineExpose: 'readonly',
@@ -66,6 +65,13 @@ export async function vue(
           extraFileExtensions:
             factoryOptions.extraFileExtensions ??
             defaultOptions.extraFileExtensions,
+          ...(factoryOptions.typescript
+            ? {
+                project:
+                  process.env['ESLINT_TSCONFIG'] ?? (await tsconfigPath()),
+                tsconfigRootDir: process.cwd()
+              }
+            : {}),
           parser: factoryOptions.typescript
             ? await importPeer<Linter.FlatConfigParserModule>(
                 '@typescript-eslint/parser'

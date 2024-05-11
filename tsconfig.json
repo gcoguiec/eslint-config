@@ -4,10 +4,8 @@
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "out",
-    "rootDir": "src",
-    "declaration": true,
-    "declarationDir": "out"
+    "rootDir": ".",
+    "noEmit": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "tests/**/*.ts", "tests/**/*.vue"]
 }

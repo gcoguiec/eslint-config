@@ -1,6 +1,6 @@
 import type { Linter } from 'eslint';
 
-import { es2021, node, browser } from 'globals';
+import globals from 'globals';
 
 export interface ConfigFactoryOptions {
   /**
@@ -25,9 +25,9 @@ export const defaultLanguageOptions: Linter.FlatConfig['languageOptions'] = {
   ecmaVersion: 'latest',
   sourceType: 'module',
   globals: {
-    ...browser,
-    ...node,
-    ...es2021,
+    ...globals.browser,
+    ...globals.node,
+    ...globals.es2021,
     document: 'readonly',
     navigator: 'readonly',
     window: 'readonly'
