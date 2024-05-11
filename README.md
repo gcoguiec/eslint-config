@@ -14,12 +14,6 @@
 
 <hr>
 
-## Packages
-
-- [`@gcoguiec/eslint-config-base`](./packages/eslint-config-base)
-- [`@gcoguiec/eslint-config-typescript`](./packages/eslint-config-typescript)
-- [`@gcoguiec/eslint-config-vue`](./packages/eslint-config-vue)
-
 ## License
 
 This project is licensed under [BSD 2-Clause](https://spdx.org/licenses/BSD-2-Clause.html).
