@@ -47,9 +47,13 @@
     "eslint-plugin-import-x": "^0.5.0",
     "eslint-plugin-perfectionist": "^2.10.0",
     "eslint-plugin-vitest": "^0.5.4",
-    "eslint-plugin-vue": "^9.25.0"
+    "eslint-plugin-vue": "^9.25.0",
+    "eslint-config-prettier": "^9.1.0"
   },
   "peerDependenciesMeta": {
+    "eslint-config-prettier": {
+      "optional": true
+    },
     "eslint-plugin-import-x": {
       "optional": true
     },

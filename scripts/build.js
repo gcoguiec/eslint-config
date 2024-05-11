@@ -25,6 +25,7 @@ context({
     'eslint-plugin-perfectionist',
     'eslint-plugin-vue',
     'eslint-plugin-vitest',
+    'eslint-config-prettier',
     '@typescript-eslint/eslint-plugin',
     '@typescript-eslint/parser'
   ],

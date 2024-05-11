@@ -94,8 +94,8 @@ export async function vue(
         ...(factoryOptions.typescript
           ? { '@typescript-eslint/no-unused-vars': 'off' }
           : {}),
-        ...(vueEslint.configs?.['base'] as Linter.FlatConfig).rules,
-        ...(vueEslint.configs?.['essential'] as Linter.FlatConfig).rules,
+        ...(vueEslint.configs?.['flat/base'] as Linter.FlatConfig).rules,
+        ...(vueEslint.configs?.['flat/essential'] as Linter.FlatConfig).rules,
         'vue/multi-word-component-names': 'off',
         'vue/component-name-in-template-casing': ['error', 'kebab-case'],
         'vue/component-options-name-casing': ['error', 'kebab-case'],
