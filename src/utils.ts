@@ -38,7 +38,7 @@ export async function importPeer<T>(name: string): Promise<T> {
     return (imported as any).default ?? imported;
   } catch (err) {
     throw new Error(
-      `'${name}' dependency seems to be missing. Did you install it?`
+      `'${name}' dependency seems to be missing. Did you install it?\n\n${String(err)}`
     );
   }
 }
