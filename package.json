@@ -1,6 +1,6 @@
 {
   "name": "@gcoguiec/eslint-config",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
   "description": "A reusable ESLint configuration",
   "license": "BSD-2-Clause",
