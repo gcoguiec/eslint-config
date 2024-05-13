@@ -27,7 +27,7 @@
 #### Install
 
 ```bash
-pnpm add -D eslint eslint-plugin-import-x eslint-plugin-perfectionist eslint-config-prettier @gcoguiec/eslint-config
+pnpm add -D eslint eslint-plugin-import-x tslib eslint-plugin-perfectionist eslint-config-prettier @gcoguiec/eslint-config
 ```
 
 #### Register the configuration with [eslint](https://eslint.org/)
@@ -44,7 +44,7 @@ export default [...(await ecmascript())];
 #### Install
 
 ```bash
-pnpm add -D eslint eslint-plugin-import-x eslint-plugin-perfectionist eslint-config-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @gcoguiec/eslint-config
+pnpm add -D eslint eslint-plugin-import-x tslib eslint-plugin-perfectionist eslint-config-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @gcoguiec/eslint-config
 ```
 
 #### Register the configuration with [eslint](https://eslint.org/)
@@ -61,7 +61,7 @@ export default [...(await typescript())];
 #### Install
 
 ```bash
-pnpm add -D eslint eslint-plugin-import-x eslint-plugin-perfectionist eslint-config-prettier eslint-plugin-vue @gcoguiec/eslint-config
+pnpm add -D eslint eslint-plugin-import-x tslib eslint-plugin-perfectionist eslint-config-prettier eslint-plugin-vue @gcoguiec/eslint-config
 ```
 
 #### Install (TypeScript only)
