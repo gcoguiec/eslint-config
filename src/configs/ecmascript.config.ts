@@ -13,7 +13,7 @@ export type EcmascriptFactoryConfig = ConfigFactoryOptions;
 
 export async function ecmascript(
   factoryOptions: EcmascriptFactoryConfig = {}
-): Promise<Linter.FlatConfig[]> {
+): Promise<Linter.Config[]> {
   const prettierConfig = await importPeer<ESLint.Plugin>(
     'eslint-config-prettier'
   );
@@ -322,7 +322,7 @@ export async function ecmascript(
               'object',
               'unknown'
             ],
-            'newlines-between': 'always'
+            newlinesBetween: 'always'
           }
         ],
         ...(factoryOptions.prettier === false ? {} : prettierConfig.rules),

@@ -28,7 +28,7 @@ export interface VueFactoryOptions extends ConfigFactoryOptions {
 
 export async function vue(
   factoryOptions: VueFactoryOptions = {}
-): Promise<Linter.FlatConfig[]> {
+): Promise<Linter.Config[]> {
   const [parentSetup, parentRules] = factoryOptions.typescript
     ? await typescript(factoryOptions)
     : await ecmascript(factoryOptions);
@@ -56,8 +56,7 @@ export async function vue(
           watchEffect: 'readonly'
         },
         sourceType: 'module',
-        parser:
-          await importPeer<Linter.FlatConfigParserModule>('vue-eslint-parser'),
+        parser: await importPeer<Linter.Parser>('vue-eslint-parser'),
         parserOptions: {
           ecmaFeatures: {
             jsx: true
@@ -73,9 +72,7 @@ export async function vue(
               }
             : {}),
           parser: factoryOptions.typescript
-            ? await importPeer<Linter.FlatConfigParserModule>(
-                '@typescript-eslint/parser'
-              )
+            ? await importPeer<Linter.Parser>('@typescript-eslint/parser')
             : null
         }
       },
@@ -94,8 +91,8 @@ export async function vue(
         ...(factoryOptions.typescript
           ? { '@typescript-eslint/no-unused-vars': 'off' }
           : {}),
-        ...(vueEslint.configs?.['flat/base'] as Linter.FlatConfig).rules,
-        ...(vueEslint.configs?.['flat/essential'] as Linter.FlatConfig).rules,
+        ...(vueEslint.configs?.['flat/base'] as Linter.Config).rules,
+        ...(vueEslint.configs?.['flat/essential'] as Linter.Config).rules,
         'vue/multi-word-component-names': 'off',
         'vue/component-name-in-template-casing': ['error', 'kebab-case'],
         'vue/component-options-name-casing': ['error', 'kebab-case'],

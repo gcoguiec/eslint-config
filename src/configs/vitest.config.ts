@@ -19,7 +19,7 @@ export interface VitestFactoryOptions extends ConfigFactoryOptions {
 
 export async function vitest(
   factoryOptions: VitestFactoryOptions = {}
-): Promise<Linter.FlatConfig[]> {
+): Promise<Linter.Config[]> {
   const [parentSetup] = factoryOptions.typescript
     ? await typescript(factoryOptions)
     : await ecmascript(factoryOptions);
@@ -42,7 +42,7 @@ export async function vitest(
         ...(factoryOptions.typescript
           ? { '@typescript-eslint/unbound-method': 'off' }
           : {}),
-        ...(vitestEslint.configs?.['recommended'] as Linter.FlatConfig).rules,
+        ...(vitestEslint.configs?.['recommended'] as Linter.Config).rules,
         'vitest/valid-title': 'off',
         'vitest/max-nested-describe': ['error', { max: 3 }],
         ...factoryOptions.overrides

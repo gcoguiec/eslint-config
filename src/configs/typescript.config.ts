@@ -14,7 +14,7 @@ export type TypescriptFactoryOptions = ConfigFactoryOptions;
 
 export async function typescript(
   factoryOptions: TypescriptFactoryOptions = {}
-): Promise<Linter.FlatConfig[]> {
+): Promise<Linter.Config[]> {
   const [parentSetup, parentRules] = await ecmascript(factoryOptions);
   const tsEslint = await importPeer<ESLint.Plugin>(
     '@typescript-eslint/eslint-plugin'
@@ -26,9 +26,7 @@ export async function typescript(
       files: factoryOptions.files ?? defaultOptions.files,
       languageOptions: {
         ...defaultLanguageOptions,
-        parser: await importPeer<Linter.FlatConfigParserModule>(
-          '@typescript-eslint/parser'
-        ),
+        parser: await importPeer<Linter.Parser>('@typescript-eslint/parser'),
         parserOptions: {
           project: process.env['ESLINT_TSCONFIG'] ?? (await tsconfigPath()),
           tsconfigRootDir: process.cwd(),
@@ -45,7 +43,7 @@ export async function typescript(
       files: factoryOptions.files ?? defaultOptions.files,
       rules: {
         ...parentRules?.rules,
-        ...(tsEslint.configs?.['recommended'] as Linter.FlatConfig).rules,
+        ...(tsEslint.configs?.['recommended'] as Linter.Config).rules,
         'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': 'error',
         'no-implied-eval': 'off',
