@@ -7,12 +7,12 @@ export interface ConfigFactoryOptions {
    * An array of glob patterns indicating the files that the configuration
    * object should apply to.
    */
-  files?: Linter.FlatConfig['files'];
+  files?: Linter.Config['files'];
 
   /**
    * An object containing the configured rules to override.
    */
-  overrides?: Linter.FlatConfig['rules'];
+  overrides?: Linter.Config['rules'];
 
   /**
    * Registers rules to avoid any conflicts between prettier and ESLint
@@ -21,7 +21,7 @@ export interface ConfigFactoryOptions {
   prettier?: boolean;
 }
 
-export const defaultLanguageOptions: Linter.FlatConfig['languageOptions'] = {
+export const defaultLanguageOptions: Linter.Config['languageOptions'] = {
   ecmaVersion: 'latest',
   sourceType: 'module',
   globals: {
